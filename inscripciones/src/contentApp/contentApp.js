@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 class ContentApp extends React.Component {
     constructor(props) {
@@ -10,8 +11,11 @@ class ContentApp extends React.Component {
 
     render() {
         return (
-            <div style={{ width: '100vw', height: '100%' }}>
-            </div>
+            <BrowserRouter style={{ width: '100vw', height: '100%' }}>
+                <Switch>
+                    <Route exact path='/' Component={null} />
+                </Switch>
+            </BrowserRouter>
         )
     }
 
