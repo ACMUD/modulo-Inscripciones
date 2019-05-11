@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import contentApp from './contentApp/contentApp'
+import ContentApp from './contentApp/contentApp'
 
 function App() {
   return (
-    <contentApp />
+    <div style={{ height: '100vh' }}>
+      <ContentApp />
+    </div>
   );
 }
 
