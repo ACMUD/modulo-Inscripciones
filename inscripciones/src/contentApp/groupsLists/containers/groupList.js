@@ -10,14 +10,25 @@ class GroupsList extends React.Component {
         }
     }
 
+    componentWillMount() {
+        this.getGroupsData()
+    }
+
     render() {
         return (
-            <GroupListView groups />
+            <GroupListView groups={this.state.groups} />
         )
     }
 
     getGroupsData() {
-        requesterCrudServer()
+        requesterCrudServer('get', 'grupo_interes/',
+            (result) => {
+                console.log(result.data)
+                this.setState({ groups: result.data })
+            },
+            (error) => {
+                console.log(error)
+            })
     }
 }
 

@@ -1,0 +1,10 @@
+.card {
+    width: 70%;
+    border: solid 2px blue;
+    border-radius: 10px;
+    text-align: center
+}
+
+.card-Content {
+    height: 90%;
+}
