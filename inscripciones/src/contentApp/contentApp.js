@@ -14,8 +14,7 @@ class ContentApp extends React.Component {
         return (
             <BrowserRouter style={{ width: '100vw', height: '100%' }}>
                 <Switch>
-                    <Route exact path='/' Component={null} />
-                    <Route exact path='/GroupsList' component={GroupsList} />
+                    <Route path="/" exact component={GroupsList} />
                 </Switch>
             </BrowserRouter>
         )
