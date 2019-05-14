@@ -1,0 +1,26 @@
+.card {
+    margin: 15px;
+    padding: 15px;
+    width: 60vw;
+    border: solid 2px darkcyan;
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 35vh;
+}
+
+.card-image {
+    margin: 10px;
+    width: 40%;
+    height: calc(100% - 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-Content {
+    margin: 10px;
+    width: 60%;
+    height: calc(100% - 20px);
+}

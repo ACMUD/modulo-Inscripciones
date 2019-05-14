@@ -27,7 +27,7 @@ function requesterHTTP(method, url, headers, successfullCallback, errorCallback,
         .catch(errorCallback);
 }
 
-function requesterCrudServer(method, endPoint, otherHeaders, successfullCallback, errorCallback, dataPost) {
+function requesterCrudServer(method, endPoint, successfullCallback, errorCallback, dataPost, otherHeaders = {}) {
     let headers = { ...headersBase, ...otherHeaders }
     axios({
         method,
