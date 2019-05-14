@@ -1,9 +1,31 @@
 .App-header {
   padding: 5px;
-  background-color: #4343d6;
+  background-color: rgba(60, 60, 255);
   height: 80px;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px 0 rgb(0, 0, 255, 0.5)
 } 
+
+.App-header a { 
+  height: 100%; 
+  display: flex;
+  align-items: center;
+}
+
+.App-header div { 
+  height: 70%; 
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.App-header > div > a{ 
+  height: 100%;
+  margin: 10px;
+  display: flex;
+  align-items: center
+}

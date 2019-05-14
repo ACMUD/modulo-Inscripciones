@@ -11,18 +11,18 @@ import homeIcon from '../Resources/iconos/casa.png'
 function Header(props) {
     return (
         <header className='App-header'>
-            <a href='http://acm.org' style={{ height: '100%' }} target="_blank">
+            <a href='http://acm.org' target="_blank" rel="noopener noreferrer">
                 <img className='Image-Responsive' alt='logotipo' src={acmudLogo} />
             </a>
             <h1>Modulo Inscripciones a Grupos de Trabajo</h1>
-            <div style={{ height: '70%', margin: '10px' }}>
-                <Link to='/' style={{ height: '100%', margin: '10px' }} >
+            <div>
+                <Link to='/'>
                     <img className='Image-Responsive' alt='homeIcon' src={homeIcon} />
                 </Link>
-                <Link to='/Settings' style={{ height: '100%', margin: '10px' }} >
+                <Link to='/Settings'>
                     <img className='Image-Responsive' alt='settingsIcon' src={settingsIcon} />
                 </Link>
-                <Link to='/SignUp' style={{ height: '100%', margin: '10px' }} >
+                <Link to='/SignUp'>
                     <img className='Image-Responsive' alt='UserIcon' src={userIcon} />
                 </Link>
             </div>
