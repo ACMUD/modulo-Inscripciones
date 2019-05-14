@@ -1,16 +1,14 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import GroupsList from './groupsLists/containers/groupList'
-import SingUp from './Sing-Up-In/containers/singUp'
+import SignUp from './Sign-Up-In/containers/signUp'
 
 function ContentApp(props) {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route path="/" exact component={GroupsList} />
-                <Route path='/SingUp' component={SingUp} />
-            </Switch>
-        </BrowserRouter>
+        <Switch>
+            <Route path="/" exact component={GroupsList} />
+            <Route path='/SignUp' component={SignUp} />
+        </Switch>
     )
 }
 

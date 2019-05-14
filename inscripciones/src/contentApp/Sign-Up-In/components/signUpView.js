@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../contentApp.css';
 
-function SingUpView(props) {
+function SignUpView(props) {
     return (
         <div className='Flex-box-column'>
             <div
@@ -51,4 +51,4 @@ function SingUpView(props) {
     )
 }
 
-export default SingUpView;
+export default SignUpView;
