@@ -16,18 +16,20 @@ class GroupsList extends React.Component {
 
     render() {
         return (
-            <GroupListView groups={this.state.groups} />
+            <GroupListView
+                groups={this.state.groups}
+            />
         )
     }
 
     getGroupsData() {
         requesterCrudServer('get', 'grupo_interes/',
             (result) => {
-                console.log(result.data)
                 this.setState({ groups: result.data })
             },
             (error) => {
                 console.log(error)
+                console.log(error.messagge ? error.messagge : '')
             })
     }
 }
