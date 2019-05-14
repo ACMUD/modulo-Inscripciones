@@ -5,7 +5,7 @@ import ContentApp from './contentApp/contentApp'
 
 function App() {
   return (
-    <div style={{ height: '100vh' }} className="App">
+    <div className="App">
       <Header />
       <ContentApp />
     </div>

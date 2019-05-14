@@ -2,25 +2,36 @@
     margin: 15px;
     padding: 15px;
     width: 60vw;
+    height: 30vh; 
     border: solid 2px darkcyan;
-    border-radius: 30px;
-    text-align: center;
+    border-radius: 15px;
+
     display: flex;
     align-items: center;
-    height: 35vh;
 }
 
 .card-image {
-    margin: 10px;
     width: 40%;
-    height: calc(100% - 20px);
+    height: 100%;
+
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .card-Content {
-    margin: 10px;
     width: 60%;
-    height: calc(100% - 20px);
+    height: 100%;
+    padding-left: 15px;
 }
+
+.card-Content div{
+    height: 50%;
+    margin-bottom: 10px;
+    overflow: hidden
+} 

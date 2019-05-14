@@ -1,12 +1,13 @@
 import React from 'react'
 import GroupCard from './groupCard'
+import '../../contentApp.css';
 
 import gisac from './../../../Resources/images/gisac.png';
 import pygroup from './../../../Resources/images/pygroup.png';
 
 function GroupListView(props) {
     return (
-        <div style={{ minHeight: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', justifyItems: 'center' }}>
+        <div className='Flex-box-column'>
             {
                 props.groups.map(
                     (item, index) => {
