@@ -2,8 +2,9 @@ import React from 'react'
 import GroupCard from './groupCard'
 import '../../contentApp.css';
 
-import gisac from './../../../Resources/images/gisac.png';
-import pygroup from './../../../Resources/images/pygroup.png';
+import gisac from './../../../Resources/images/GISAC2.png';
+import pygroup from './../../../Resources/images/pygroup2.jpeg';
+import gump from './../../../Resources/images/GUMP.jpeg';
 
 function GroupListView(props) {
     return (
@@ -33,6 +34,8 @@ function getImage(id) {
             return gisac
         case 'pygroup':
             return pygroup
+        case 'gump':
+            return gump
         default:
             break;
     }
