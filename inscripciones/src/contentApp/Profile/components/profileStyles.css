@@ -1,0 +1,8 @@
+.card img {
+    max-width: 60%;
+    max-height: 60%;
+}
+
+.card button{
+    margin-bottom: 10px;
+}

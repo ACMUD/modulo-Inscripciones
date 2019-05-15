@@ -1,15 +1,21 @@
 import React from 'react'
 import UserLoginView from '../components/userLoginView'
+import { Redirect } from 'react-router-dom'
 
 class UserLogin extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            mode: "SignIn"
+            mode: "SignIn",
+            redirect: '/profile',
         }
     }
 
     render() {
+        if ((localStorage.getItem('userID') > 0)
+            || (sessionStorage.getItem('userID') > 0))
+            return <Redirect to={this.state.redirect} />
+
         return (
             <UserLoginView
                 mode={this.state.mode}
@@ -23,8 +29,7 @@ class UserLogin extends React.Component {
                         sessionStorage.setItem('userID', userID);
                     }
 
-                    alert('Has Iniciado Sesión')
-                    // this.props.logIn(userID)
+                    this.setState({ redirect: '/' })
                 }}
             />
         )

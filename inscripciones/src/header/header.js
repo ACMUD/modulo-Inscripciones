@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './header.css';
 import '../App.css'
 
-import acmudLogo from '../Resources/images/BannerACMUD.png'
+import acmudLogo from '../Resources/iconos/BannerACMUD.png'
 import userIcon from '../Resources/iconos/avatar.png'
 import settingsIcon from '../Resources/iconos/ajustes.png'
 import homeIcon from '../Resources/iconos/casa.png'
