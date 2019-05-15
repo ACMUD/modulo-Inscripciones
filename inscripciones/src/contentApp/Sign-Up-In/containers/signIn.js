@@ -29,6 +29,8 @@ class SignIn extends React.Component {
                 (result) => {
                     if (result.data.length > 0) {
                         this.props.logIn(result.data[0].Id, this.state.RemeindMe)
+                    } else {
+                        this.setState({ error: true })
                     }
                 },
                 (error) => {

@@ -9,7 +9,7 @@ function SignInView(props) {
                 {textInputField("Usuario", "Usuario", props.data.Usuario, props.handleChange, props.error, { width: '100%' })}
                 {textInputField("Contraseña", "Contrasena", props.data.Contrasena, props.handleChange, props.error, { width: '100%' }, "password")}
 
-                {checkBoxInputField("Recordarme", "RemeindMe", props.data.RemeindMe, props.handleChange)}
+                {checkBoxInputField("Mantener Sesion Iniciada", "RemeindMe", props.data.RemeindMe, props.handleChange)}
             </div>
             <div>
                 {buttonInputField("Iniciar Sesión", props.SignIn)}

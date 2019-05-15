@@ -12,6 +12,9 @@ class UserLogin extends React.Component {
     }
 
     render() {
+        console.log(localStorage.getItem('userID'))
+        console.log(sessionStorage.getItem('userID'))
+
         if ((localStorage.getItem('userID') > 0)
             || (sessionStorage.getItem('userID') > 0))
             return <Redirect to={this.state.redirect} />
@@ -29,7 +32,7 @@ class UserLogin extends React.Component {
                         sessionStorage.setItem('userID', userID);
                     }
 
-                    this.setState({ redirect: '/' })
+                    this.setState({ redirect: '/' }, () => console.log(this.state))
                 }}
             />
         )
