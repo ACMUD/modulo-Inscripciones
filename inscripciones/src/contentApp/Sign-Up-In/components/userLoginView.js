@@ -11,7 +11,7 @@ import SignUp from '../containers/signUp'
 function userLoginView(props) {
     return (
         <div className='Flex-box-column'>
-            <Paper style={{ width: '50%' }}>
+            <Paper style={{ width: '45%' }}>
                 <Tabs
                     value={props.mode === 'SignIn' ? 0 : 1}
                     indicatorColor="primary"
@@ -26,9 +26,9 @@ function userLoginView(props) {
             <div className='Central-Card' >
                 {
                     props.mode === 'SignIn'
-                        ? <SignIn />
+                        ? <SignIn logIn={props.logIn} />
                         : props.mode === 'SignUp'
-                            ? <SignUp />
+                            ? <SignUp logIn={props.logIn} />
                             : ''
                 }
             </div>

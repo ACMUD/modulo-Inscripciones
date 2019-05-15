@@ -16,6 +16,16 @@ class UserLogin extends React.Component {
                 handleChange={(value) => {
                     this.setState({ mode: value });
                 }}
+                logIn={(userID, remeindMe) => {
+                    if (remeindMe) {
+                        localStorage.setItem('userID', userID);
+                    } else {
+                        sessionStorage.setItem('userID', userID);
+                    }
+
+                    alert('Has Iniciado Sesión')
+                    // this.props.logIn(userID)
+                }}
             />
         )
     }
