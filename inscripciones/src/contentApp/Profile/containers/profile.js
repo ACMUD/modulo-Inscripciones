@@ -38,7 +38,6 @@ class Profile extends React.Component {
                 this.getIdentificaciones()
                 this.getCorreos()
                 this.getRoles()
-
             })
 
         } else {
@@ -54,7 +53,34 @@ class Profile extends React.Component {
         return (
             <ProfileView
                 data={this.state}
+                editMode={this.state.editMode}
+                handleChange={(name, value) => this.setState({ [name]: value })}
+                changeIdentificaciones={(id, value) => {
+                    let ids = this.state.Identificaciones
+                    let Identificaciones = ids.map((item) => {
+                        if (item.Id === parseInt(id)) {
+                            item.NumeroIdentificacion = value
+                        }
+                        return item
+                    })
+                    this.setState({ Identificaciones })
+                }}
+                changeCorreos={(id, value) => {
+                    let crrs = this.state.Correos
+                    let Correos = crrs.map((item) => {
+                        if (item.Id === parseInt(id)) {
+                            item.Correo = value
+                        }
+                        return item
+                    })
+                    this.setState({ Correos })
+                }}
+                editAccount={() => this.setState({ editMode: true })}
                 closeSession={this.closeSession.bind(this)}
+                aceptEdition={() => this.putPersona()}
+                cancelEdition={() => { this.setState({ editMode: false }); this.getPersona() }}
+
+            // addCorreos={}
             />
         )
     }
@@ -71,6 +97,7 @@ class Profile extends React.Component {
                         Codigo: resultData.Codigo,
                         Telefono: resultData.Telefono,
                         EstadoUsuario: resultData.EstadoUsuario.Nombre,
+                        EstadoUsuarioID: resultData.EstadoUsuario.Id,
                     })
                 }
             },
@@ -91,6 +118,7 @@ class Profile extends React.Component {
                                 Id: resultData.Id,
                                 NumeroIdentificacion: resultData.NumeroIdentificacion,
                                 TipoIdentificacion: resultData.TipoIdentificacion.Nombre,
+                                TipoIdentificacionId: resultData.TipoIdentificacion.Id,
                             }
                         })
                     })
@@ -113,6 +141,7 @@ class Profile extends React.Component {
                                 Id: resultData.Id,
                                 Correo: resultData.Correo,
                                 TipoCorreo: resultData.TipoCorreo.TipoCorreo,
+                                TipoCorreoId: resultData.TipoCorreo.Id,
                             }
                         })
                     })
@@ -144,6 +173,78 @@ class Profile extends React.Component {
                 this.setState({ networkError: true })
             }
         )
+    }
+
+    putPersona() {
+        let {
+            Nombres,
+            Apellidos,
+            Codigo,
+            Telefono,
+            EstadoUsuarioID,
+        } = this.state
+        requesterCrudServer('put', `persona/${this.state.userID}`,
+            (result) => {
+                this.setState({ editMode: false })
+            },
+            (error) => {
+                console.error(error)
+                this.setState({ networkError: true })
+            },
+            {
+                Nombres,
+                Apellidos,
+                Codigo,
+                Telefono,
+                EstadoUsuario: {
+                    Id: EstadoUsuarioID
+                },
+            }
+        )
+    }
+
+    putCorreos() {
+        this.state.Correos.forEach((item) => {
+            requesterCrudServer('put', `correo/${item.Id}`,
+                (result) => {
+                },
+                (error) => {
+                    this.setState({ networkError: true })
+                },
+                {
+                    correo: item.correo,
+                    Persona: {
+                        Id: this.state.userID
+                    },
+                    TipoCorreo: {
+                        Id: item.TipoCorreoId
+                    }
+                }
+            )
+        });
+    }
+
+    putIdentificacion() {
+        this.state.Identificaciones.forEach((item) => {
+            requesterCrudServer('put', `identificacion/${item.Id}`,
+                (result) => {
+                    this.setState({ editMode: false })
+                },
+                (error) => {
+                    console.error(error)
+                    this.setState({ networkError: true })
+                },
+                {
+                    NumeroIdentificacion: item.NumeroIdentificacion,
+                    Persona: {
+                        Id: this.state.userID
+                    },
+                    TipoIdentificacion: {
+                        Id: item.TipoIdentificacionId
+                    }
+                }
+            )
+        });
     }
 
     closeSession() {

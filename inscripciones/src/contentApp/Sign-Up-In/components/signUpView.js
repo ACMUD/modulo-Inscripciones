@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../contentApp.css';
 
-import { textInputField, selectInputField, buttonInputField } from './fields'
+import { textInputField, selectInputField, buttonInputField } from '../../fields'
 
 function SignUpView(props) {
     return (

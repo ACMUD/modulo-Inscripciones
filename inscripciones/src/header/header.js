@@ -19,7 +19,8 @@ function Header(props) {
                 <Link to='/'>
                     <img className='Image-Responsive' alt='homeIcon' src={homeIcon} />
                 </Link>
-                <Link to='/Settings'>
+                {/* <Link to='/Settings'> */}
+                <Link to='/'>
                     <img className='Image-Responsive' alt='settingsIcon' src={settingsIcon} />
                 </Link>
                 <Link to='/SignUp'>

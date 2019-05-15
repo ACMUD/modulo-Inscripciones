@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { textInputField, buttonInputField, checkBoxInputField } from './fields'
+import { textInputField, buttonInputField, checkBoxInputField } from '../..//fields'
 
 function SignInView(props) {
     return (

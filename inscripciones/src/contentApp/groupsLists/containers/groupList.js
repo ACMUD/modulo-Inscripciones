@@ -28,8 +28,7 @@ class GroupsList extends React.Component {
                 this.setState({ groups: result.data })
             },
             (error) => {
-                console.log(error)
-                console.log(error.messagge ? error.messagge : '')
+                console.error(error)
             })
     }
 }

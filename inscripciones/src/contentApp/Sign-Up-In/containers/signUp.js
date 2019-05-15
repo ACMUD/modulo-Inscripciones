@@ -148,7 +148,6 @@ class SignUp extends React.Component {
 
         requesterCrudServer('post', 'identificacion/',
             (result) => {
-                console.log(result)
                 this.setState({ sendedIdentificacion: true }, () => this.logIn(PersonaID))
             },
             (error) => {
@@ -175,7 +174,6 @@ class SignUp extends React.Component {
 
         requesterCrudServer('post', 'correo/',
             (result) => {
-                console.log(result)
                 this.setState({ sendedCorreo: true }, () => this.logIn(PersonaID))
             },
             (error) => {
@@ -201,7 +199,6 @@ class SignUp extends React.Component {
 
         requesterCrudServer('post', 'rol_persona/',
             (result) => {
-                console.log(result)
                 this.setState({ sendedRol: true }, () => this.logIn(PersonaID))
             },
             (error) => {

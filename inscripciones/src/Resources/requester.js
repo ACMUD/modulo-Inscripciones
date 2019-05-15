@@ -29,11 +29,11 @@ function requesterHTTP(method, url, headers, successfullCallback, errorCallback,
 
 function requesterCrudServer(method, endPoint, successfullCallback, errorCallback, dataPost, otherHeaders = {}) {
     let headers = { ...headersBase, ...otherHeaders }
-    console.log('----------------------------------------------------------')
-    console.log('URL: ', endPoint)
-    console.log('Method: ', method)
-    console.log('DataPost: ', dataPost)
-    console.log('----------------------------------------------------------')
+    // console.log('----------------------------------------------------------')
+    // console.log('URL: ', endPoint)
+    // console.log('Method: ', method)
+    // console.log('DataPost: ', dataPost)
+    // console.log('----------------------------------------------------------')
     axios({
         method,
         headers,
